@@ -12,6 +12,8 @@ import com.ggr3ml1n.shoppinglist.entities.ShoppingListNames
 @Database (entities = [LibraryItem::class, NoteItem::class, ShoppingListItem::class, ShoppingListNames::class], version = 1)
 abstract class MainDatabase : RoomDatabase() {
     
+    abstract fun getDao(): Dao
+    
     companion object {
         @Volatile
         private var INSTANCE: MainDatabase? = null
